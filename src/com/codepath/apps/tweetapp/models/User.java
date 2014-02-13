@@ -12,6 +12,7 @@ public class User {
 	private int followersCount;
 	private int friendsCount;
 	private String profileImageUrl;
+	private String description;
 	
     public String getName() {
         return name;
@@ -36,6 +37,10 @@ public class User {
     public int getFollowersCount() {
         return followersCount;
     }
+    
+    public String getTagline() {
+    	return description;
+    }
 
     public int getFriendsCount() {
         return friendsCount;
@@ -56,6 +61,7 @@ public class User {
         	u.followersCount = json.getInt("followers_count");
         	u.friendsCount = json.getInt("friends_count");
         	u.profileImageUrl = json.getString("profile_image_url");
+        	u.description = json.getString("description");
         } catch (JSONException e) {
             e.printStackTrace();
         }
